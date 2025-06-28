@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --primary-color: #0A1128;
     --white-color: #FFFFFF;
     --light-gray-color: #EEEEEE;
@@ -10,50 +10,6 @@
     --skill-color: rgba(255, 255, 255, 0.2);
     --whitesmoke-color: #fafafa;
     --project-background-color: rgb(245 245 245);
-}
-
-/* Scrollbar personalizada para todo o site */
-::-webkit-scrollbar {
-    width: 1.2rem;
-}
-
-::-webkit-scrollbar-track {
-    background: rgba(10, 10, 10, 0.8);
-    border-radius: 1rem;
-    border: 1px solid rgba(120, 67, 233, 0.2);
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #7843e9, #43e97b);
-    border-radius: 1rem;
-    border: 2px solid rgba(10, 10, 10, 0.8);
-    box-shadow: 
-        0 0 10px rgba(120, 67, 233, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #8a4fff, #4fffa3);
-    box-shadow: 
-        0 0 20px rgba(120, 67, 233, 0.8),
-        0 0 10px rgba(67, 233, 123, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
-}
-
-::-webkit-scrollbar-thumb:active {
-    background: linear-gradient(180deg, #9c4fff, #5fffa3);
-    box-shadow: 
-        0 0 30px rgba(120, 67, 233, 1),
-        0 0 15px rgba(67, 233, 123, 0.8),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-}
-
-/* Scrollbar para Firefox */
-html {
-    scrollbar-width: thin;
-    scrollbar-color: #7843e9 rgba(10, 10, 10, 0.8);
 }
 
 * {
@@ -111,18 +67,13 @@ img {
     display: block;
 }
 
-/* Foco visível para acessibilidade */
+/* Foco visÃ­vel para acessibilidade */
 a:focus,
 button:focus,
 input:focus,
 textarea:focus {
     outline: 2px solid var(--purple-color);
     outline-offset: 2px;
-}
-
-/* Remove outline dos links do menu */
-.menu a:focus {
-    outline: none;
 }
 
 .menu {
@@ -402,7 +353,7 @@ textarea:focus {
     gap: 2rem;
 }
 
-/* Scrollbar moderno para a lista de formação */
+/* Scrollbar moderno para a lista de formaÃ§Ã£o */
 .about-formation-content ul::-webkit-scrollbar {
     width: 0.8rem;
 }
@@ -495,7 +446,7 @@ textarea:focus {
 }
 
 .about-formation-content ul li a::before {
-    content: "🎓";
+    content: "ðŸŽ“";
     margin-right: 0.8rem;
     font-size: 1.4rem;
 }
@@ -760,7 +711,7 @@ textarea:focus {
     padding-bottom: 5rem;
 }
 
-/* Seção de Experiência */
+/* SeÃ§Ã£o de ExperiÃªncia */
 .experience {
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
     color: var(--white-color);
@@ -1377,7 +1328,7 @@ textarea:focus {
     text-shadow: 0 0 10px rgba(67, 233, 123, 0.5);
 }
 
-/* Botão voltar ao topo */
+/* BotÃ£o voltar ao topo */
 .back-to-top {
     position: fixed;
     bottom: 2rem;
@@ -1412,9 +1363,6 @@ textarea:focus {
 }
 
 /* Menu mobile */
-/* Estilos temporários para corrigir o menu mobile */
-
-/* Menu mobile */
 .close-menu {
     display: none;
 }
@@ -1445,7 +1393,7 @@ textarea:focus {
     transform: translateY(-2px);
 }
 
-/* Ícone hamburger moderno */
+/* Ãcone hamburger moderno */
 .close-menu-label::before {
     content: '';
     position: absolute;
@@ -1462,7 +1410,7 @@ textarea:focus {
         0 0.8rem 0 0 #43e97b;
 }
 
-/* Transformação do ícone quando aberto */
+/* TransformaÃ§Ã£o do Ã­cone quando aberto */
 .close-menu:checked ~ .close-menu-label::before {
     transform: translate(-50%, -50%) rotate(45deg);
     box-shadow: 
@@ -1484,12 +1432,20 @@ textarea:focus {
 
 /* Media Queries */
 @media (max-width: 480px) {
-    .close-menu-label {
-        display: block;
+    :root {
+        --gap: 2rem;
     }
-
+    
+    .main-content {
+        padding: 2rem 1.5rem;
+    }
+    
     .menu-spacing {
         display: none;
+    }
+
+    .close-menu-label {
+        display: block;
     }
 
     .menu {
@@ -1614,6 +1570,55 @@ textarea:focus {
     .close-menu:checked ~ .menu .menu-content {
         transform: scale(1);
     }
+
+    /* Hero section mobile */
+    .start {
+        background-attachment: scroll;
+        padding: 2rem 0;
+    }
+
+    .start-text-content {
+        padding: 2rem;
+    }
+
+    /* About section */
+    .about-content {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .about-img {
+        width: 100%;
+        max-width: 30rem;
+        margin: 0 auto;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    /* Skills section */
+    .skills-content {
+        gap: 2rem;
+    }
+
+    .skill-card {
+        min-height: 20rem;
+        padding: 2rem;
+    }
+
+    .skill-card h3 {
+        font-size: 1.8rem;
+    }
+
+    .tech-icons {
+        gap: 1rem;
+    }
+
+    .tech-icons img {
+        width: 4rem;
+        height: 4rem;
+    }
 }
 
 /* Tablets e telas intermediárias */
@@ -1623,10 +1628,6 @@ textarea:focus {
     }
 
     .menu ul {
-        display: none;
-    }
-
-    .menu-spacing {
         display: none;
     }
 
@@ -1707,17 +1708,6 @@ textarea:focus {
     .menu ul li:nth-child(4) a { animation-delay: 0.4s; }
     .menu ul li:nth-child(5) a { animation-delay: 0.5s; }
 
-    .menu ul li a::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(120, 67, 233, 0.1), transparent);
-        transition: left 0.5s ease;
-    }
-
     .menu ul li a:hover {
         color: #fff;
         background: rgba(120, 67, 233, 0.1);
@@ -1726,10 +1716,6 @@ textarea:focus {
         box-shadow: 
             0 10px 30px rgba(120, 67, 233, 0.3),
             0 0 20px rgba(120, 67, 233, 0.2);
-    }
-
-    .menu ul li a:hover::before {
-        left: 100%;
     }
 
     .menu ul li a::after {
@@ -1745,211 +1731,35 @@ textarea:focus {
     .close-menu:checked ~ .menu .menu-content {
         transform: scale(1);
     }
+
+    .main-content {
+        padding: 2.5rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .project-content {
+        padding: 2.5rem;
+    }
+
+    .credits-content {
+        padding: 0 2rem;
+    }
 }
 
-/* About section mobile */
-@media (max-width: 480px) {
+@media (min-width: 769px) and (max-width: 1024px) {
     .about-content {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .about-formation-content,
-    .about-skills-content {
-        width: 100%;
-        max-width: none;
-    }
-
-    .about-formation-content {
-        margin-bottom: 2rem;
-    }
-
-    .about-formation-content ul {
-        max-height: 50rem;
-    }
-
-    .about-formation-content ul li {
-        padding: 2rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .about-formation-content ul li strong {
-        font-size: 1.6rem;
-    }
-
-    .about-skills-content {
-        padding: 2.5rem;
-    }
-
-    .about-skills-content h3 {
-        font-size: 2.4rem;
-        margin-bottom: 2.5rem;
-    }
-
-    .skills {
-        gap: 1.2rem;
-    }
-
-    .skills-skill {
-        padding: 1rem 2rem;
-        font-size: 1.3rem;
-        min-width: auto;
-        flex: 0 1 auto;
-    }
-
-    /* Projetos responsivos mobile */
-    .project-content {
-        grid-template-columns: 1fr;
         gap: 2rem;
-        padding: 2rem;
-        margin-bottom: 3rem;
     }
 
-    .project-icon-content {
-        order: -1;
-        margin-bottom: 2rem;
-    }
-
-    .tech-icons {
-        gap: 1rem;
-    }
-
-    .tech-icons img {
-        width: 4rem;
-        height: 4rem;
-    }
-
-    /* Experience responsiva mobile */
-    .experience-content {
-        gap: 3rem;
-    }
-
-    .experience-card {
-        padding: 2rem;
-    }
-
-    .experience-company {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-
-    .experience-meta {
-        gap: 1rem;
-    }
-
-    .experience-role {
-        padding: 1.5rem;
-    }
-
-    .experience-period {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-
-    .experience-description li {
-        font-size: 1.4rem;
-    }
-
-    .skill-tag {
-        font-size: 1.2rem;
-        padding: 0.6rem 1.2rem;
-    }
-
-    /* Contato responsivo mobile */
-    .contact-form-content {
-        padding: 2.5rem;
-    }
-
-    .btn-contact {
-        padding: 1.5rem 3rem;
-        font-size: 1.5rem;
-        min-width: 18rem;
-    }
-
-    /* Footer responsivo mobile */
-    .credits-content {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        text-align: center;
-        padding: 0 1rem;
-    }
-
-    /* About section tablet */
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .about-formation-content,
-    .about-skills-content {
-        width: 100%;
-        max-width: none;
-        padding: 2.5rem;
-    }
-
-    .about-formation-content ul {
-        max-height: 45rem;
-    }
-
-    .about-formation-content ul li {
-        padding: 2rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .skills {
-        gap: 1.5rem;
-    }
-
-    .skills-skill {
-        padding: 1.2rem 2.4rem;
-        font-size: 1.4rem;
-    }
-
-    /* Projetos responsivos tablet */
     .project-content {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-        padding: 2.5rem;
-        margin-bottom: 3rem;
-    }
-
-    .project-icon-content {
-        order: -1;
-        margin-bottom: 2rem;
-    }
-
-    .tech-icons img {
-        width: 5rem;
-        height: 5rem;
-    }
-
-    /* Experience responsiva tablet */
-    .experience-content {
-        gap: 3rem;
-    }
-
-    .experience-card {
         padding: 2.5rem;
     }
 
-    .experience-company {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-
-    /* Contato responsivo tablet */
-    .contact-form-content {
-        padding: 3rem;
-    }
-
-    /* Footer responsivo tablet */
     .credits-content {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        text-align: center;
         padding: 0 2rem;
     }
 }
