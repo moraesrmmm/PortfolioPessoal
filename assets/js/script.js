@@ -1,5 +1,8 @@
 // Smooth scrolling para links internos
 document.addEventListener('DOMContentLoaded', function() {
+    // Atualiza durações da experiência profissional automaticamente
+    updateExperienceDurations();
+    
     // Seleciona todos os links com href começando com #
     const internalLinks = document.querySelectorAll('a[href^="#"]');
     
@@ -202,3 +205,57 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Função para calcular e atualizar durações da experiência
+function updateExperienceDurations() {
+    // Data de início do trabalho na SPSP (fevereiro de 2024)
+    const startDateAprendiz = new Date('2024-02-01');
+    // Data de início como Desenvolvedor Full Stack (novembro de 2024)
+    const startDateDeveloper = new Date('2024-11-01');
+    const currentDate = new Date();
+    
+    // Calcula duração total (desde fevereiro 2024)
+    const totalDuration = calculateDuration(startDateAprendiz, currentDate);
+    
+    // Calcula duração na posição atual (desde novembro 2024)
+    const currentPositionDuration = calculateDuration(startDateDeveloper, currentDate);
+    
+    // Atualiza os elementos no DOM
+    const totalDurationElement = document.getElementById('total-experience-duration');
+    const currentPositionElement = document.getElementById('current-position-duration');
+    
+    if (totalDurationElement) {
+        totalDurationElement.textContent = totalDuration;
+    }
+    
+    if (currentPositionElement) {
+        currentPositionElement.textContent = currentPositionDuration;
+    }
+}
+
+// Função auxiliar para calcular duração entre duas datas
+function calculateDuration(startDate, endDate) {
+    const years = endDate.getFullYear() - startDate.getFullYear();
+    const months = endDate.getMonth() - startDate.getMonth();
+    
+    let totalMonths = years * 12 + months;
+    
+    // Ajusta se o dia atual é anterior ao dia de início
+    if (endDate.getDate() < startDate.getDate()) {
+        totalMonths--;
+    }
+    
+    const finalYears = Math.floor(totalMonths / 12);
+    const finalMonths = totalMonths % 12;
+    
+    // Formata a string de duração
+    if (finalYears === 0) {
+        return `${finalMonths} ${finalMonths === 1 ? 'mês' : 'meses'}`;
+    } else if (finalMonths === 0) {
+        return `${finalYears} ${finalYears === 1 ? 'ano' : 'anos'}`;
+    } else {
+        const yearText = finalYears === 1 ? 'ano' : 'anos';
+        const monthText = finalMonths === 1 ? 'mês' : 'meses';
+        return `${finalYears} ${yearText} e ${finalMonths} ${monthText}`;
+    }
+}
